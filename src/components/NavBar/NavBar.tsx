@@ -1,16 +1,35 @@
 import { Link } from "react-router-dom"
 
-const NavBar = () => {
+// Types
+import type { Dispatch, SetStateAction } from "react"
+import type { User } from "../../App"
+
+type NavBarProps = {
+    user: User | null
+    setUser: Dispatch<SetStateAction<User | null>>
+}
+
+// Component
+const NavBar = ({ user, setUser }: NavBarProps) => {
+
+    // Logs the user out
+    const handleSignOut = () => setUser(null)
+
     return (
         <nav>
             <ul>
-                <li>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li>
-                    <Link to='/test'>Page 1</Link>
-                </li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/test'>Page 1</Link></li>
                 <li>Page 2</li>
+                <li>Page 3</li>
+                { user ?
+                    <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
+                    :
+                    <>
+                        <li><Link to='/'>Sign In</Link></li>
+                        <li><Link to='/'>Sign Up</Link></li>
+                    </>
+                }
             </ul>
         </nav>
     )
