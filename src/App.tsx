@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 
 // * Components
@@ -11,7 +12,10 @@ function App() {
   return (
     <>
     <NavBar />
-      <h1>Hello, World!</h1>
+    <Routes>
+      <Route path='/' element={<h1>Home page!</h1>} />
+      <Route path='/test' element={<h1>test</h1>} />
+    </Routes>
     </>
   )
 }
