@@ -12,7 +12,7 @@ type NavBarProps = {
 // Component
 const NavBar = ({ user, setUser }: NavBarProps) => {
 
-    // Logs the user out
+    // Function to log the user out
     const handleSignOut = () => setUser(null)
 
     return (
@@ -26,8 +26,8 @@ const NavBar = ({ user, setUser }: NavBarProps) => {
                     <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
                     :
                     <>
-                        <li><Link to='/'>Sign In</Link></li>
-                        <li><Link to='/'>Sign Up</Link></li>
+                        <li><Link to='/signin'>Sign In</Link></li>
+                        <li><Link to='/signup'>Sign Up</Link></li>
                     </>
                 }
             </ul>
