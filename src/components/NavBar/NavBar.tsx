@@ -22,10 +22,9 @@ const NavBar = ({ user, setUser }: NavBarProps) => {
                 <li><Link to='/test'>Page 1</Link></li>
                 <li>Page 2</li>
                 <li>Page 3</li>
-                { user ?
-                    <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
-                    :
-                    <>
+                { user 
+                    ? <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
+                    : <>
                         <li><Link to='/signin'>Sign In</Link></li>
                         <li><Link to='/signup'>Sign Up</Link></li>
                     </>
